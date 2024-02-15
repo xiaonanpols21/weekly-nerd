@@ -1,20 +1,38 @@
-var express = require('express');
-var app = express();
+// Bron Setu-up: https://www.digitalocean.com/community/tutorials/how-to-use-ejs-to-template-your-node-application
+const express = require('express');
 
-// set the view engine to ejs
+const sass = require('sass');
+const fs = require('fs');
+
+const app = express();
+const port = 4000;
+
+sass.render({
+    file: 'public/styles/style.scss',
+    outputStyle: 'compressed' // Set output style, e.g., compressed, expanded
+}, function(err, result) {
+    if (!err) {
+        fs.writeFile('public/styles/style.css', result.css, function(err){
+            if(!err){
+                console.log('Sass compiled successfully');
+            } else {
+                console.error('Error writing CSS: ', err);
+            }
+        });
+    } else {
+        console.error('Error compiling Sass: ', err);
+    }
+});
+
+app.use(express.static('public'));
+
 app.set('view engine', 'ejs');
 
-// use res.render to load up an ejs view file
-
-// index page
 app.get('/', function(req, res) {
   res.render('pages/index');
 });
 
-// about page
-app.get('/about', function(req, res) {
-  res.render('pages/about');
+// Port
+app.listen(port, () => {
+    console.log(`EServer is listening on port ${port}`);
 });
-
-app.listen(8080);
-console.log('Server is listening on port 8080');
