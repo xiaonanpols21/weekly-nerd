@@ -48,7 +48,7 @@
 
     h1 {
         @include f26;
-        margin-top: 50px;
+        margin-top: calc(50px + 20px);
     }
 
     h3 {
