@@ -78,6 +78,10 @@
         }
 
         &:hover {
+            h3 {
+                @include f18;
+            }
+
             div:first-of-type:before {
                 opacity: 1;
             }
@@ -107,12 +111,14 @@
     }
 
     h3 {
+        @include f14;
         position: absolute;
         bottom: 10px;
         left: 15px;
         right: 15px;
         color: $white;
         z-index: 1;
+        transition: .4s;
     }
 
     div:first-of-type {

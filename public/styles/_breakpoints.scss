@@ -142,6 +142,10 @@
             &:nth-of-type(5n) {
                 grid-column-end: 3;
             }
+
+            h3 {
+                @include f16;
+            }
         }
     }
 
