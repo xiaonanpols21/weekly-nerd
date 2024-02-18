@@ -10,6 +10,11 @@
     text-align: center;
     z-index: 2;
 
+    section {
+        @include flex(row, 5px);
+        margin: auto;
+    }
+
     p {
         @include f14;
         font-weight: bold;

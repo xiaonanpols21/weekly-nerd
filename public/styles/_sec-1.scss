@@ -3,8 +3,9 @@
     background: linear-gradient(208deg, rgba(111,54,176,0.5) 0%, rgba(255,72,112,0.5) 100%); // Bron: https://cssgradient.io/
     
     h1 {
+        position: relative;
         @include f50;
-        margin-bottom: 10px;
+        padding-bottom: 10px;
         margin-top: calc(50px + 40px);
 
         // Text gradient
@@ -12,6 +13,24 @@
         color: transparent;
         -webkit-background-clip: text;
         background-image: linear-gradient(to left, $dark-purple, $purple);
+        
+        
+
+        // Bron: https://keithjgrant.com/posts/2017/07/transitioning-gradients/
+        &::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            // FIXME:
+            -webkit-background-clip: text;
+            background-image: linear-gradient(to right, $pink, $purple);
+            animation: h1-gradient 3s infinite;
+            transition: .4s;
+        }
     }
 
     p {
@@ -19,6 +38,21 @@
             @include f18;
             margin: 20px 0px 50px 0px;
         }
+    }
+}
+
+// Bron: https://tomdohnal.com/posts/animated-gradient-headings
+@keyframes h1-gradient {
+    0% {
+        opacity: 0%;
+    } 
+    
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 
