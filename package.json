@@ -2,7 +2,7 @@
   "name": "weekly-nerd",
   "version": "1.0.0",
   "description": "Blog site over de gasten die kwamen presenteren in Minor blok Web",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
