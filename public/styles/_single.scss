@@ -48,12 +48,12 @@
 
     h1 {
         @include f26;
-        margin-top: 50px;
+        margin-top: calc(50px + 20px);
     }
 
     h3 {
         @include f20;
-        margin-bottom: calc(-20px);
+        margin-bottom: calc(-30px);
     }
 }
 
@@ -90,7 +90,7 @@
     }
 
     > a {
-        @include f18;
+        position: relative;
         display: block;
         width: fit-content;
         margin-left: auto;
@@ -100,6 +100,34 @@
         text-decoration: none;
         font-weight: bold;
         color: $white;
+
+        // Bron: https://keithjgrant.com/posts/2017/07/transitioning-gradients/
+        &::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 10px;
+            background: linear-gradient(41deg, $purple 0%, $pink 100%);
+            transition: .4s;
+            opacity: 0;
+        }
+
+        &:hover::before {
+            opacity: 1;
+        }
+
+        &:focus {
+            outline: none;
+            background: $purple;
+        }
+
+        p {
+            @include f18;
+            position: relative;
+        }
     }
 
     .carousel-blog {

@@ -200,8 +200,7 @@
 
     .main-single {
         div {
-            width: 700px;
-            //margin: 0px;
+            max-width: 700px;
 
             p {
                 @include f18;
@@ -209,19 +208,15 @@
         }
 
         header {
+            height: 300px;
+            margin-top: -50px;
 
-            // FIXME:
-            img {
-                left: calc(60%);
-                width: 500px;
-                height: 500px;
-                border-radius: 10% 40% / 50% 20%;
+            nav {
+                display: none;
             }
         }
 
         a {
-            // FIXME: 
-            top: calc(50px + 13px);
             background-color: transparent;
             font-size: 20px;
             text-align: left;
@@ -235,7 +230,6 @@
 
         h1 {
             @include f42;
-            margin-left: calc(30px + 10px);
         }
 
         h3 {
