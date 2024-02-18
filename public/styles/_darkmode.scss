@@ -1,0 +1,71 @@
+// Bron: https://css-tricks.com/dark-modes-with-css/
+@media (prefers-color-scheme: dark) {
+    p {
+        color: $lila;
+    }
+
+    .nav-page {
+        p {
+            color: $dark-purple;
+        }
+    }
+
+    // Sec-1
+    .header-home {
+        a {
+            &:focus {
+                border: 3px solid $pink;
+            }
+        }
+    }
+    .sec-1 {
+        background: linear-gradient(208deg, rgba(53,23,77,1) 0%, rgba(255,72,120,1) 100%); // Bron: https://cssgradient.io/
+
+        h1 {
+            background-image: linear-gradient(to left, $purple, $lila);
+        }
+    }
+
+    // Sec-2
+    .sec-2 {
+        background-color: $dark-purple;
+
+        h2 {
+            color: $lila;
+        }
+    }
+
+    // Footer
+    footer {
+        background-color: $dark-purple;
+
+        a {
+            color: $white;
+
+            &:hover {
+                color: $purple;
+            }
+        }
+    }
+
+    // Single
+    .body-single {
+        background-color: $dark-purple;
+
+        footer {
+            padding-bottom: 50px;
+        }
+    }
+
+    .main-single {
+        h1, h2, h3 {
+            color: $lila;
+        }
+    }
+
+    .related-blogs {
+        h4 {
+            color: $lila;
+        }
+    }
+}

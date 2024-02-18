@@ -171,6 +171,7 @@
         top: 0;
         bottom: 0;
         width: min-content;
+        margin: 0px;
         height: 100vh;
         padding-bottom: 30px;
         justify-content: space-between;
@@ -247,6 +248,8 @@
     }
 
     .related-blogs {
+        padding-bottom: 50px;
+        
         h4 {
             @include f26;
         }
