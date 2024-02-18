@@ -95,5 +95,21 @@ toggleDarkModeImage();
 
 window.matchMedia('(prefers-color-scheme: dark)').addListener(toggleDarkModeImage);
 
+const switchBtn = document.querySelector("#toggle");
+function toggleDarkMode() {
+    const body = document.body;
+    const prefersDark = isDarkMode();
 
+    if (prefersDark) {
+        window.matchMedia('(prefers-color-scheme: light)')
+    } else {
+        window.matchMedia('(prefers-color-scheme: dark)')
+    }
+}
+toggleDarkMode();
+
+switchBtn.addEventListener('click', function(e) {
+    toggleDarkMode(); 
+    e.preventDefault();
+});
 
