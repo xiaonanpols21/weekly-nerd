@@ -1,0 +1,125 @@
+.body-single {
+    footer {
+        background-color: transparent;
+    }
+}
+
+.main-single {
+    div {
+        @include flex(column, 30px);
+    }
+
+    header {
+        position: relative;
+        margin: -20px;
+        height: 400px;
+
+        img {
+            @include img100;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-radius: 0px 0px 50px 50px;
+        }
+    }
+
+    a {
+        position: absolute;
+        top: calc(80px);
+        left: 20px;
+        width: 30px;
+        height: 30px;
+        background-color: rgba($dark-purple, 0.5);
+        border-radius: 50%;
+        box-shadow: 0px 3px 6px rgba($white, 0.16);
+        font-size: 10px;
+        color: $white;
+        z-index: 1;
+
+        i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    h1 {
+        @include f26;
+        margin-top: 50px;
+    }
+
+    h3 {
+        @include f20;
+        margin-bottom: calc(-20px);
+    }
+}
+
+.authur {
+    @include gridClmn(60px 1fr, 0px 10px);
+
+    img {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    h2 {
+        @include f16;
+        display: flex;
+        align-items: end;
+    }
+
+    p {
+        @include f14;
+    }
+}
+
+.related-blogs {
+    @include flex(column, 20px);
+    padding: 20px;
+    margin-top: calc(100px - 40px);
+
+    h4 {
+        @include f24;
+    }
+
+    > a {
+        @include f18;
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        padding: 10px 20px;
+        background: linear-gradient(41deg, $pink 0%, $purple 100%);
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        color: $white;
+    }
+
+    .carousel-blog {
+        @include flex(row, 20px);
+        margin: 0px -20px;
+        padding: 0px 20px;
+        overflow-x: auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        a {
+            flex-basis: 300px;
+            flex-shrink: 0;
+            height: 150px
+        }
+
+        h3 {
+            @include f16;
+        }
+    }
+}

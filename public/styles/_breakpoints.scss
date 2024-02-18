@@ -3,8 +3,7 @@
     // Sec-1
     .sec-1 {
         div {
-            width: 500px;
-            margin: auto;
+            @include container500;
         }
     }
 
@@ -30,6 +29,24 @@
             &:nth-of-type(5n) {
                 grid-column-end: 4;
             }
+        }
+    }
+
+    // Single
+    .main-single div {
+        @include container500;
+    }
+}
+
+@media (min-width: 768px) { 
+    .related-blogs {
+        .carousel-blog {
+            @include gridClmn(1fr 1fr 1fr, 20px);
+            grid-auto-rows: auto;
+        }
+
+        > a {
+            margin-top: -40px;
         }
     }
 }
@@ -121,9 +138,7 @@
         }
 
         > div {
-
-            max-width: 1000px;
-            margin: auto;
+            @include container1000;
         }
     }
 
@@ -170,6 +185,80 @@
         p {
             width: max-content;
             transform: rotate(-90deg);
+        }
+    }
+
+    // Single 
+    .body-single {
+        @include container1000;
+
+        .sec {
+            height: 100%;
+            padding: 50px 0px;
+        }
+    }
+
+    .main-single {
+        div {
+            width: 700px;
+            //margin: 0px;
+
+            p {
+                @include f18;
+            }
+        }
+
+        header {
+
+            // FIXME:
+            img {
+                left: calc(60%);
+                width: 500px;
+                height: 500px;
+                border-radius: 10% 40% / 50% 20%;
+            }
+        }
+
+        a {
+            // FIXME: 
+            top: calc(50px + 13px);
+            background-color: transparent;
+            font-size: 20px;
+            text-align: left;
+            color: $black;
+            transition: .4s;
+
+            &:hover {
+                color: $pink;
+            }
+        }
+
+        h1 {
+            @include f42;
+            margin-left: calc(30px + 10px);
+        }
+
+        h3 {
+            @include f22;
+        }
+    }
+
+    .authur {
+        grid-template-columns: 80px 1fr;
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    .related-blogs {
+        h4 {
+            @include f26;
+        }
+
+        > a {
+            margin-top: -20px;
         }
     }
 }

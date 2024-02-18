@@ -44,6 +44,10 @@ app.get('/', function(req, res) {
   res.render('pages/index');
 });
 
+app.get('/single', function(req, res) {
+  res.render('pages/single');
+});
+
 // Port
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);

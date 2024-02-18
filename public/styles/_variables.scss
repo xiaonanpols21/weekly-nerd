@@ -4,6 +4,7 @@ $purple: #6F36BB;
 $pink: #FF4878;
 $lila: #F3EFFE;
 $white: white;
+$black: black;
 
 // Own variables
 $font-stack: "Ubuntu", sans-serif;
@@ -28,6 +29,16 @@ $simple-shadow: 0px 3px 6px rgba($dark-purple, 0.16);
 @mixin f20 {
     font-size: 20px;
     line-height: 33px;
+}
+
+@mixin f22 {
+    font-size: 22px;
+    line-height: 36px;
+}
+
+@mixin f24 {
+    font-size: 24px;
+    line-height: 40px;
 }
 
 @mixin f26 {
@@ -67,4 +78,14 @@ $simple-shadow: 0px 3px 6px rgba($dark-purple, 0.16);
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+@mixin container500 {
+    max-width: 500px;
+    margin: auto;
+}
+
+@mixin container1000 {
+    max-width: 1000px;
+    margin: auto;
 }
