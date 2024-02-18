@@ -71,10 +71,12 @@
         height: 400px;
         flex-basis: 33.3%;
         flex-shrink: 0;
+        transition: .4s;
 
         &:focus {
             outline: none;
             padding: 10px;
+            flex-basis: 60%;
             background-color: $purple;
             border-radius: 20px;
 
@@ -88,6 +90,14 @@
                 right: 20px;
             }
         }
+
+        &:hover {
+            flex-basis: 60%;
+        }
+    }
+
+    .active {
+        flex-basis: 60%;
     }
 
     article {
@@ -110,9 +120,5 @@
         @include img100;
         border-radius: 20px;
         box-shadow: 3px 3px 6px rgba($dark-purple, 0.16);
-    }
-
-    .active {
-        flex-basis: 60%;
     }
 }

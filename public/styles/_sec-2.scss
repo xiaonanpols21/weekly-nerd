@@ -61,6 +61,7 @@
     a {
         position: relative;
         display: block;
+        transition: .4s;
 
         &:nth-of-type(2n) {
             grid-row-end: span 2;

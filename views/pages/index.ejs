@@ -3,7 +3,7 @@
 <head>
     <%- include('../partials/head'); %>
 </head>
-<body class="body-header">
+<body class="body-index">
     <header class="header-home">
         <nav>
             <a href="/"><img src="img/logo.svg" alt="Xiao Logo" /></a>
@@ -39,7 +39,7 @@
         </div>
         <section class="carousel-hero">
             <h4 class="visually-hidden">Xiao's top 3 gasten</h4>
-            <a class="active" href="/">
+            <a href="/">
                 <article>
                     <h3>Kilian Valkhof</h3>
                     <img src="img/thumbnail.jpeg" alt="CMD Media lounge">
@@ -60,6 +60,7 @@
         </section>
     </section>
 
+    <!-- Blogs -->
     <section id="sec-2" class="sec sec-2">
         <div>
             <h2>Blogs</h2>
@@ -108,14 +109,17 @@
                 </a>
             </section>
         </div>
-        
     </section>
+
     <footer>
         <h3 class="visually-hidden">Algemene informatie</h3>
         <div></div>
         <a href="https://github.com/xiaonanpols21?tab=repositories" aria-label="Xiao's Github pagina"><i class="fa-brands fa-github"></i></a>
         <p>All rights reserved</p>
     </footer>
-  <%- include('../partials/script-fontawesome'); %>
+
+    <script src="/js/index.js"></script>
+
+    <%- include('../partials/script-fontawesome'); %>
 </body>
 </html>
