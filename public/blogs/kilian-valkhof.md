@@ -1,0 +1,115 @@
+---  
+title: Stop using JS for that
+date: 07-02-2024
+author: Kilian Valkhof
+categories:
+    - JavaScript
+    - HTML
+    - CSS
+description: Voorbeelden om bepaalde dingen te maken zonder JavaScript
+header_image:
+    - src: http://link_to_image
+    - alt: Altenative text
+---
+
+# Wat is er verteld?
+Kilian ging vertellen over waarom het beter is om JS alleen te gebruiken wanneer het nodig is. JS is best wel breekbaar. Kijk of je het met HTML kan oplossen, zo niet dan met CSS en als dat nog steeds niet kan, dan JS. 
+
+Kilian ging voorbeelden laten zien wat HTML en CSS kan waar je anders JS voor nodig zou hebben. Zo vertelde hij over de volgende onderdelen:
+
+## Custom toggles
+```html
+<label class="switch">
+    <input type="checkbox">
+    <span class="slider"></span>
+</label>
+```
+Met de checkbox kan je simpel weg een switch maken met wat CSS. Daar hoef je helemaal geen JavaScript voor te hebben om dit voor elkaar te krijgen. 
+
+## Datalist
+```html
+<input list="browsers" name="browser" id="browser">
+<datalist id="browsers">
+    <option value="Edge">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+</datalist>
+```
+Met de Datalist kan je een searchbar maken. Dat filtert hij op de characters die je intypet. Ik had nooit gedacht dat dit gewoon kon met HTML attributes. 
+
+## In page transition
+```css
+html {
+    Scroll-behavior: smooth
+}
+```
+Met deze css trick zorg je ervoor dat je een mooie beweging krijgt als je wilt navigeren naar een section op de pagina. Deze techniek gebruikte ik al in mijn vorige werken. 
+
+```css
+#my-target {
+    Scroll-margin-top: 100px;
+}
+```
+Met scroll-margin-top zorg je voor de offset. Want hij scrollt totdat de section net in de viewport zit. Maar soms heb je een header die in de er overheen valt. Dan wil je dat met een offset regelen dat hij onder de header komt i.p.v eronder. 
+
+## Carousel
+```css
+.scroller {
+    Scroll-snap-type: x mandatory
+}
+.scroller div {
+    Scroll-snap-align: start
+}
+```
+Met scroll snap kan je ervoor zorgen dat de middelste card altijd in het midden staat van het scherm. Dan hoef je niet moeilijk te rekenen met JavaScript. 
+
+## Accordions en modals
+```html
+<details>
+    <summary>Epcot Center</summary>
+    <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+</details>
+```
+Meestal op een webshop heb je de FAQ sectie waarbij er vragen worden gesteld en als je op een vraag klikt, komt het antwoord tevoorschijn. Dat kan gewoon met HTML alleen. Ik weet nog dat ik zo'n sectie wilde maken bij mijn FED project van eerste jaar. Daar gebruikte ik wel JavaScript om dat te maken. Waarom moeilijk doen als het ook makkelijk kan?
+
+## Dialog
+```html
+<dialog>
+    <p>Greetings, one and all!</p>
+    <form method="dialog">
+        <button>OK</button>
+    </form>
+</dialog>
+```
+Als je een gallery hebt dan wil je op een foto klikken en dan komt de foto tevoorschijn in je beeld met een donkere achtergrond. Dat kan gewoon met HTML, CSS en nu toch wel een beetje JavaScript om de dialog te tonen wanneer je op een element klikt. Voor dat ik begon met deze minor, liep ik stage als front-end developer. Zij wilde dus een lightbox. Ik moest een npm package zoeken om dat voor elkaar te krijgen. Hun weten blijkbaar dus niet dat dat ook gewoon kan met HTML en CSS. 
+
+# Wat vind ik er van?
+Kilian liet goede voorbeelden zien van hoe je bepaalde components kan maken met alleen maar HTML en CSS. Zo vond ik het handig dat hij liet zien hoe je simpel een switch kan maken met een checkbox. 
+
+Wat nieuw voor mij was de Dialog. Ik had niet kunnen denken dat dat gewoon simpel weg met HTML en CSS kan en een klein beetje JS voor alleen een onclick event. Ik dacht dat alleen met JS kon met moeilijke code. 
+
+De scroll-behavior:smooth kon ik al maar met zijn tip over hoe je de offset kan bepalen met margin met je CSS, was wel weer nieuwe informatie. Daar zat ik laatst mee te strugglen. Dan heb ik nu door zijn workshop de kennis om het te verbeteren. 
+
+# Wat ga ik er mee doen?
+Met de tips die Kilian had gegeven zou ik zijn kennis zo in mijn projecten kunnen stoppen. Bijvoorbeeld de switch van een checkbox. Die zou ik graag willen implementeren in mijn eigen werk en zo nog meer van zijn voorbeelden.
+
+# Notes
+Choose the least powerful language suitable for a given purpse
+
+Html> Css > JS
+JS meest breekbaar
+
+Zonder downloaden
+
+Kijk of je beter kan maken van vorige components
+
+## Container queries
+```css
+@container (min-width: 400px) {
+
+}
+```
+Kijk niet naar viewport maar naar element?
+

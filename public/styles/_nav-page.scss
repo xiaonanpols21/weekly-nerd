@@ -1,0 +1,36 @@
+.nav-page {
+    @include flex(column, 20px);
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: $simple-shadow;
+    text-align: center;
+    z-index: 2;
+
+    p {
+        @include f14;
+        font-weight: bold;
+    }
+
+    a {
+        color: $dark-purple;
+        padding: 20px;
+        transition: .4s;
+
+        &:hover {
+            color: $pink;
+        }
+
+        &:focus {
+            outline: none;
+            padding: 10px;
+            margin: 0px 10px;
+            background-color: $purple;
+            border-radius: 10px;
+            color: $white;
+        }
+    }
+}

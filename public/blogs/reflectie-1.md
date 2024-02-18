@@ -1,0 +1,34 @@
+---  
+title: Reflectie 1
+date: 16-02-2024
+author: Xiao Nan Pols
+categories:
+    - Reflectie
+description: Waar sta ik, wat wil ik leren en wat hoop ik te behalen
+header_image:
+    src: http://link_to_image
+    alt: Altenative text
+---
+
+# Waar sta ik?
+Ik heb kennis over Javascript. In de eerste heb ik een SRP-cursus gedaan over JavaScript voordat ik het vak JavaScript had gedaan. Dus ik had al wat kennis voordat ik dat schoolvak ging volgen. Maar ik heb wel het meeste geleerd met dat vak uit de eerste waarbij ik een Xiaocolade app had gemaakt om je eigen chocoladereep te maken. Ook heb ik een Xiaoco Ijs applicatie gemaakt voor een SRP punt waarbij je je eigen ijsje kan samenstellen. Ook met JavaScript gemaakt. Ik heb het themasemester Information Design gevolgd waarbij ik een website heb gemaakt om BTS-liedjes te zien waarop je kan filteren. De liedjes zijn opgehaald via een Spotify Rapid API. 
+
+Ik heb mijn lange stage gedaan waarbij ik heb leren werken met NextJS. Ik ken dus al wat JavaScript maar ik wil er graag beter in worden. 
+
+# Leerdoelen
+Mijn leerdoelen voor deze minor zijn als volgt:
+
+**JavaScript**
+Ik wil graag beter worden met JavaScript. Ik heb het gevoel dat ik het wel kan maar ik snap niet 100% wat ik nou eigenlijk aan het doen ben. Ik wil dus beter begrijpen wat ik nou echt aan het doen ben. Maar ik weet dat een goede developer ook niet alles kan weten. Je bent een goede developer wanneer je goed kan Googlen. 
+
+Door het maken van die BTS-website met de Spotfiy API heb ik ontdekt dat ik het leuk vind om te programmeren met data die gefetcht wordt uit een API en dat je wat kan doen met de data. Dus daar zou ik ook graag beter in willen worden.
+
+**CSS**
+Met mijn lange stage was mijn doel: JavaScript. Dus ik focuste mijzelf het meeste daarop. Toen op het einde kreeg ik feedback op mijn werk en het kwam erop neer dat ik meer animaties kon toevoegen op elementen. 
+
+Dus nu wil ik met deze minor meer leren over CSS en toepassen. Ik zag bij de WAFS-expo dat er een team was die allemaal coole animaties had op elementen. Dat zou ik graag ook willen toepassen op mijn werk. 
+
+# Wat hoop ik te kunnen aan einde van deze minor?
+Ik hoop genoeg kennis te hebben opgedaan om mij goed voor te bereiden voor het afstuderen in eerste semester van volgend schooljaar. Ook wil ik graag de goede kennis hebben voor een goede baan als junior front-end developer voor na het afstuderen. 
+
+

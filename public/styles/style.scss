@@ -1,11 +1,28 @@
 @import "./variables";
 @import "./header";
+@import "./nav-page";
+@import "./sec";
+@import "./sec-1";
+@import "./sec-2";
+@import "./footer";
 @import "./breakpoints";
 
 * {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-stack;
+}
+
+p {
+    @include f16;
 }
 
 .visually-hidden {
@@ -16,4 +33,13 @@
     position: absolute;
     white-space: nowrap;
     width: 1px;
-  }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba($dark-purple, 0.5);
+}

@@ -1,0 +1,94 @@
+---  
+title: Phantom
+date: 14-02-2024
+author: Fenna de Wilde
+categories:
+    - NextJS
+    - JavaScript
+description: Deep dive over aria-labels en een demonstratie over het maken van een carousel
+header_image:
+    src: http://link_to_image
+    alt: Altenative text
+---
+
+# Wat is er verteld?
+Fenna heeft de website gemaakt van Phantom. Fenna vertelde over hoe zij te werk gaat bij haar bedrijf en over projecten die zij gedaan heeft waarbij zij goed nadenken over mensen met een beperking die het internet gebruiken. 
+
+## :focus-visible
+Zo vertelde zij over de :focus-visible ‘soort van’ pseudo class waarbij je over het web gaat met alleen maar Tab gebruiken. 
+
+## Aria-label
+Aria label gebruiken zij bij elementen zodat de screen readers kunnen vertellen wat getoond wordt op het scherm. Screen readers worden gebruikt door blinde mensen. Als je een button hebt met een icon, moet je een Aria label toevoegen om de gebruiker te laten weten wat te zien is op het scherm. 
+
+## Carousel en Aria-label
+Fenna legde uitgebreid uit hoe je een carousel maakt waarbij de Aria label wordt toegepast. Carousels zijn het irritantste om te programmeren om het zo gebruiksvriendelijk te maken. Ze liet zien hoe je het moet programmeren en welke Aria labels je waar moet toevoegen omdat je verschillende soorten Aria labels hebt. 
+
+## Verder
+Verder vertelde zij nog over de Dialog die Kilian ook vertelde en over de prefers-redu-motion. Daarmee kunnen gebruikers animatie uit zeggen als zij dat niet fijn vinden.
+
+# Wat vind ik er van?
+Fenna vertelde dat zij werkt met NextJS. Dat vind ik wel nice omdat ik dat had gebruikt op mijn stage. Het interessantste wat zij had verteld was over de Aria label. Ik weet dat het bestaat, ik weet wat de basis doet maar zelf heb ik het nooit echt geïmplementeerd in mijn werk. 
+
+# Wat ga ik er mee doen?
+De tips van Fenna neem ik graag mee naar mijn volgende projecten om mee te werken. De prefers-reduced-motion, Maarten zei het al een keer om daar eens naar te kijken maar ik was het vergeten. Nu dat Fenna ook over dat onderwerp heeft verteld, zal ik mij eens gaan verdiepen in dat onderdeel. 
+
+# Notes
+## De stack
+- NextJS
+- Emotion
+- Vercel
+- Senity
+- Miton
+
+## Disability
+Mensen zijn gehandicapt, mensen gebruiken niet altijd het web op dezelfde manier
+:focus-visible
+
+Focus pseudo is anders dan focus visible.
+
+## Aria-label
+Info geven aan structurr, gedrag van element.
+
+Aria label, beschrijvende tekst aan element toevoegen
+Dit is goed voor screen readers
+
+**Aria controls**
+Info geven, elementen met elkaar verbinden. Ene eleent ander element controlere
+
+**Aria expanded**
+
+**Aria live**
+Met js dynamic veranderen. Screen reader krijgt geen update automatisch. 
+Het heeft 3 waardes
+Off, polite, ossordive
+
+**Aria tonic**
+Hoe die update door screen reader
+Button: 10 points, als hij update dan zegt hij alleen 20 points.
+Meer context geven?
+
+## Carousel
+Irritantste ooit om goed te programmeren
+
+section
+Aria-roledescription=carousel
+Arua-labeledby als titel heeft / Aria-label
+
+Slide controls met button aria-disabled=true
+
+## Dialog
+Zelfde als kilian valkhof
+
+## Contrast ratio
+4,5;1 normale teskt
+3;1 titels
+
+## Letter grootte
+Minimal 16px
+
+## Prefers-reduced-motion
+Speel geen animatie af
+
+Test dit om een screen reader te gebruiken
+
+
