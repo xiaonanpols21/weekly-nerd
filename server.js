@@ -22,10 +22,22 @@ const allLinks = [
     }, 
     {
         paramId: "2",
+        title: "Stop using JS for that",
+        date: "07-02-2024",
+        authur: "Kilian Valkhof",
+        img: "public/img/thumbnail.jpeg",
+        categories: ["HTML", "JavaScript", "CSS"],
+        description: "Voorbeelden om bepaalde dingen te maken zonder JavaScript",
         link: "public/blogs/2.md"
     }, 
     {
         paramId: "3",
+        title: "Reflectie 1",
+        date: "16-02-2024",
+        authur: "Xiao Nan Pols",
+        img: "public/img/thumbnail.jpeg",
+        categories: ["Reflectie", "JavaScript", "CSS"],
+        description: "Waar sta ik, wat wil ik leren en wat hoop ik te behalen",
         link: "public/blogs/3.md"
     }
 ]
@@ -80,7 +92,7 @@ app.get('/', function(req, res) {
 
 // Zie prompts: https://chemical-bunny-323.notion.site/Weekly-Nerd-Chat-GPT-Documentation-6764544211dc42158c23d85eec350fc4#5528358b478e4056a507c5e7d72a85bb
 // Route handler for rendering individual blog pages
-app.get('/:id', (req, res) => {
+app.get('/blog/:id', (req, res) => {
     const { id } = req.params;
     const link = allLinks.find(item => item.paramId === id);
 
@@ -89,6 +101,12 @@ app.get('/:id', (req, res) => {
         return;
     }
 
+    // Change string to date
+    // Zie prompts: https://chemical-bunny-323.notion.site/Weekly-Nerd-Chat-GPT-Documentation-6764544211dc42158c23d85eec350fc4#83f8f6ae239542c2a30756f1f6eae882
+    const [day, month, year] = link.date.split('-');
+    const formattedDate = new Date(`${year}-${month}-${day}`);
+    const options = { day: '2-digit', month: 'short', year: 'numeric' };
+    const formattedDateString = formattedDate.toLocaleDateString('nl-NL', options);
     const markdownPath = path.join(__dirname, link.link);
 
     fs.readFile(markdownPath, 'utf8', (err, data) => {
@@ -98,17 +116,17 @@ app.get('/:id', (req, res) => {
             return;
         }
         
-        // Convert Markdown to HTML
         const htmlContent = md.render(data);
 
-        // Render the single page template with the HTML content
         res.render('pages/single', {
             content: htmlContent,
-            link
+            link: {
+                ...link,
+                date: formattedDateString
+            }
         });
     });
 });
-
 
 // Port
 app.listen(port, () => {

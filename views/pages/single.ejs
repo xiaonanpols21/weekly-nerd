@@ -7,22 +7,22 @@
     <div class="div-single">
         <div>
             <!-- Header -->
-            <%- include('../partials/header-home'); %>
+            <%- include('../partials/header-single'); %>
 
             <main class="sec main-single">
                 <header>
                     <nav>
-                        <a href="/" aria-label="Pijl terug naar home knop"><i class="fa-solid fa-angle-left"></i></a>
+                        <button id="backBtn" aria-label="Pijl terug naar home knop"><i class="fa-solid fa-angle-left"></i></button>
                     </nav>
                     <img src="/img/thumbnail.jpeg" alt="CMD Media Lounge">
                 </header>
 
-
                 <div>
-                    <h1>Stop using JS for that</h1>
+                    <h1><%= link.title %></h1>
+                    <p><%= link.description %></p>
                     <section class="authur">
-                        <h2><%= link.authur %></h2>
-                        <p>07-02-2024</p>
+                        <h3><%= link.authur %></h3>
+                        <p><%= link.date %></p>
                         <img src="/img/thumbnail.jpeg" alt="CMD Media Lounge">
                     </section>
 
@@ -38,7 +38,7 @@
                     <a href="/">
                         <article>
                             <h3>Stop using JS for that</h3>
-                            <img src="img/thumbnail.jpeg" alt="CMD Media lounge">
+                            <img src="../img/thumbnail.jpeg" alt="CMD Media lounge">
                             <div><i class="fa-solid fa-angle-right"></i></div>
                             <div class="overlay"></div>
                         </article>
@@ -46,7 +46,7 @@
                     <a href="/">
                         <article>
                             <h3>Stop using JS for that</h3>
-                            <img src="img/thumbnail.jpeg" alt="CMD Media lounge">
+                            <img src="../img/thumbnail.jpeg" alt="CMD Media lounge">
                             <div><i class="fa-solid fa-angle-right"></i></div>
                             <div class="overlay"></div>
                         </article>
@@ -54,7 +54,7 @@
                     <a href="/">
                         <article>
                             <h3>Stop using JS for that</h3>
-                            <img src="img/thumbnail.jpeg" alt="CMD Media lounge">
+                            <img src="../img/thumbnail.jpeg" alt="CMD Media lounge">
                             <div><i class="fa-solid fa-angle-right"></i></div>
                             <div class="overlay"></div>
                         </article>

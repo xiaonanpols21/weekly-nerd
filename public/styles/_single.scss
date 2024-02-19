@@ -8,7 +8,13 @@
 
 .main-single {
     div {
-        @include flex(column, 30px);
+        @include flex(column, 20px);
+
+        > p:first-of-type {
+            @include f14;
+            margin: -20px 0px 20px 0px;
+            font-style: italic;
+        }
     }
 
     header {
@@ -27,7 +33,7 @@
         }
     }
 
-    a {
+    button {
         position: absolute;
         top: calc(80px);
         left: 20px;
@@ -49,13 +55,29 @@
     }
 
     h1 {
-        @include f26;
+        @include f42;
         margin-top: calc(50px + 20px);
     }
 
+    h2 {
+        @include f24;
+    }
+
     h3 {
-        @include f20;
-        margin-bottom: calc(-30px);
+        @include f18;
+    }
+
+    ul {
+        @include f16;
+        margin-left: 20px;
+    }
+
+    strong {
+        display: block;
+    }
+
+    h2, h3, strong {
+        margin-bottom: calc(-20px);
     }
 }
 
@@ -71,10 +93,11 @@
         object-fit: cover;
     }
 
-    h2 {
+    h3 {
         @include f16;
         display: flex;
         align-items: end;
+        margin: 0px
     }
 
     p {

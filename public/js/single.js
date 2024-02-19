@@ -1,8 +1,18 @@
+/*
+    Variables
+*/
 // Dark mode
 const darkSwitch = document.querySelector("#toggle");
 const body = document.querySelector(".body-single");
 const logo = document.querySelector("#logo");
 
+// Back btn
+// Bron: https://www.w3schools.com/jsref/met_his_back.asp
+const backBtn = document.querySelector("#backBtn");
+
+/*
+    Functions
+*/
 // Dark mode
 function darkMode() {
     body.classList.toggle("dark-mode");
@@ -16,3 +26,9 @@ function darkMode() {
     }
 }
 darkSwitch.addEventListener("click", darkMode);
+
+// Back btn
+function back() {
+    history.back()
+}
+backBtn.addEventListener("click", back);

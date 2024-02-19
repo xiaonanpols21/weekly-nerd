@@ -213,6 +213,10 @@
             p {
                 @include f18;
             }
+
+            > p:first-of-type {
+                @include f16;
+            }
         }
 
         header {
@@ -224,24 +228,21 @@
             }
         }
 
-        a {
-            background-color: transparent;
-            font-size: 20px;
-            text-align: left;
-            color: $black;
-            transition: .4s;
-
-            &:hover {
-                color: $pink;
-            }
+        h1 {
+            @include f50;
         }
 
-        h1 {
-            @include f42;
+        h2 {
+            @include f26;
+            margin-top: 10px;
         }
 
         h3 {
-            @include f22;
+            @include f20;
+        }
+
+        ul {
+            @include f18;
         }
     }
 
