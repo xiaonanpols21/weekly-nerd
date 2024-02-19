@@ -1,125 +1,98 @@
 const express = require('express');
 const sass = require('sass');
 const fs = require('fs');
+const path = require('path');
 const marked = require('marked');
+
 const app = express();
 const port = 3000;
+const publicDir = path.join(__dirname, 'public');
+const blogsDir = path.join(__dirname, 'blogs');
 
-const allLinks = [
-    {
-        paramId: "kilian-valkhof",
-        link: "public/blogs/kilian-valkhof.md"
-    },
-    {
-        paramId: "fenna-de-wilde",
-        link: "public/blogs/fenna-de-wilde.md"
-    },
-    {
-        paramId: "reflectie-1",
-        link: "public/blogs/reflectie-1.md"
-    },
-]
-
-
-// Function to compile Sass
-// Zie prompts: https://chemical-bunny-323.notion.site/Weekly-Nerd-Chat-GPT-Documentation-6764544211dc42158c23d85eec350fc4#7a7561db865749019571f89bbc464bca
+// Compile Sass
 function compileSass() {
     sass.render({
-        file: 'public/styles/index.scss',
-        outputStyle: 'compressed' // Set output style, e.g., compressed, expanded
+        file: path.join(publicDir, 'styles', 'index.scss'),
+        outputStyle: 'compressed'
     }, function(err, result) {
-        if (!err) {
-            fs.writeFile('public/styles/index.css', result.css, function(err){
-                if(!err){
-                    console.log('Sass compiled successfully');
-                } else {
-                    console.error('Error writing CSS: ', err);
-                }
-            });
-        } else {
-            console.error('Error compiling Sass: ', err);
+        if (err) {
+            console.error('Error compiling Sass:', err);
+            return;
         }
+        fs.writeFile(path.join(publicDir, 'styles', 'index.css'), result.css, function(err) {
+            if (err) {
+                console.error('Error writing CSS:', err);
+            } else {
+                console.log('Sass compiled successfully');
+            }
+        });
     });
 }
 compileSass();
 
-fs.watch('public/styles', { recursive: true }, (eventType, filename) => {
-    if (filename && filename.endsWith('.scss')) {
-        console.log(`File ${filename} changed, compiling Sass...`);
-        compileSass();
+// Watch Markdown files for changes
+fs.watch(blogsDir, { recursive: true }, (eventType, filename) => {
+    if (filename && filename.endsWith('.md')) {
+        console.log(`File ${filename} changed, reloading Markdown content...`);
+        // Optionally reload the Markdown content here
+    }
+}).on('error', (error) => {
+    if (error.code === 'ENOENT') {
+        console.log(`Directory ${blogsDir} does not exist.`);
+        // Handle this case accordingly, e.g., create the directory
+    } else {
+        console.error('Error watching directory:', error);
     }
 });
 
-app.use(express.static('public'));
+
+app.use(express.static(publicDir));
 app.set('view engine', 'ejs');
 
-// Routes
-app.get('/', function(req, res) {
-  res.render('pages/index');
-});
-
-app.get('/single', function(req, res) {
-  res.render('pages/single');
-});
-
-// Define a route with a dynamic :id parameter
-app.get("/blog/:id", async function (req, res) {
-    try {
-        const id = req.params.id;
-        let html;
-
-        for (const item of allLinks) {
-            if (id === item.paramId && !item.link.startsWith("http")) {
-                html = await parseToHTML(item.link);
-            } else if (id === item.paramId) {
-                html = await parseHTTPmdToHTML(item.link);
-            }
-        }
-
-        if (!html) {
-            console.log("notFound");
-            res.status(404).render(notFoundPage);
+// Read Markdown file
+function readMarkdownFile(filename, callback) {
+    fs.readFile(filename, 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading Markdown file:', err);
+            callback(err);
             return;
-        } 
+        }
+        callback(null, data);
+    });
+}
 
-        // Render the EJS template with the HTML content
-        res.render("single", { html: html });
-    } catch (error) {
-        console.error("Error:", error);
-        res.status(500).send("Error reading file");
+// Routes
+app.get('/', (req, res) => {
+    res.render('pages/index');
+});
+
+app.get('/single', (req, res) => {
+    res.render('pages/single');
+});
+
+app.get('/blog/:id', (req, res) => {
+    const { id } = req.params;
+    const markdownPath = path.join(blogsDir, `${id}.md`);
+
+    readMarkdownFile(markdownPath, (err, data) => {
+        if (err) {
+            res.status(404).send('Blog not found');
+            return;
+        }
+        const htmlContent = marked(data);
+        res.render('pages/single', { content: htmlContent });
+    });
+});
+
+// Watch Markdown files for changes
+fs.watch(blogsDir, { recursive: true }, (eventType, filename) => {
+    if (filename && filename.endsWith('.md')) {
+        console.log(`File ${filename} changed, reloading Markdown content...`);
+        // Optionally reload the Markdown content here
     }
 });
 
-// Parse local Markdown file to HTML
-const parseToHTML = (markdownFile) => {
-    return new Promise((resolve, reject) => {
-        fs.readFile(markdownFile, "utf8", (err, data) => {
-            if (err) {
-                console.error("Error reading file:", err);
-                reject(err);
-            } else {
-                const html = marked(data);
-                resolve(html);
-            }
-        });
-    });
-};
-
-// Parse remote Markdown file to HTML
-const parseHTTPmdToHTML = async (url) => {
-    try {
-        const response = await axios.get(url);
-        const html = marked(response.data);
-        return html;
-    } catch (error) {
-        console.error("Error fetching file:", error);
-        throw error;
-    }
-};
-
-
-
-// Port
+// Start the server
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
 });
