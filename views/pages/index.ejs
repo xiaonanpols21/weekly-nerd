@@ -54,8 +54,40 @@
     <main id="sec-2" class="sec sec-2">
         <div>
             <h2>Blogs</h2>
-            <button aria-label="Filter knop"><i class="fa-solid fa-filter"></i></button>
-            <main class="carousel-blog">
+            <button onclick="showModal()" aria-label="Filter knop"><i class="fa-solid fa-filter"></i></button>
+            <dialog class="dialog">
+                <form method="dialog">
+                    <fieldset>
+                        <legend>Categorie:</legend>
+                        <input type="checkbox" id="category-1" name="category-1" value="HTML">
+                        <label for="category-1">HTML</label>
+
+                        <input type="checkbox" id="category-2" name="category-2" value="CSS">
+                        <label for="category-2">CSS</label>
+
+                        <input type="checkbox" id="category-3" name="category-3" value="JavaScript">
+                        <label for="category-3">JavaScript</label>
+
+                        <input type="checkbox" id="category-4" name="category-4" value="NextJS">
+                        <label for="category-4">NextJS</label>
+
+                        <input type="checkbox" id="category-5" name="category-5" value="Reflectie">
+                        <label for="category-5">Reflectie</label>
+                    </fieldset>
+                    <fieldset>
+                        <label for="sort">Sorteren:</label>
+                        <select name="sort" id="sort">
+                            <option value="all">Alles</option>
+                            <option value="abc">A - Z</option>
+                            <option value="old">Oud - Nieuw</option>
+                            <option value="new">Niew - Oud</option>
+                        </select>
+                    </fieldset>
+                    <button><p>Gereed</p></button>
+                </form>
+
+            </dialog>
+            <section class="carousel-blog">
                 <h4 class="visually-hidden">Alle blogs carousel</h4>
                 <a href="/">
                     <article>

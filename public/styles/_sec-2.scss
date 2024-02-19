@@ -162,3 +162,88 @@
         border-radius: 10px;
     }
 }
+
+// Form
+.dialog {
+    padding: 40px 20px;
+    margin: auto;
+    max-width: 400px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: $simple-shadow;
+}
+
+form {
+    @include flex(column, 30px);
+
+    fieldset {
+        border: none;
+
+        &:first-of-type {
+            // Checkbox button
+            // Zie prompts: https://chemical-bunny-323.notion.site/Weekly-Nerd-Chat-GPT-Documentation-6764544211dc42158c23d85eec350fc4#a4670340e7904fa88423c81e9bc1ba48
+            input[type="checkbox"] {
+                display: none;
+            }
+
+            input[type="checkbox"]:checked + label {
+                background-color: $purple;
+                color: #fff;
+            }
+
+            label {
+                display: inline-block;
+                padding: 10px 20px;
+                margin: 5px;
+                background-color: $pink;
+                border-radius: 10px;
+                color: $white;
+                cursor: pointer;
+
+                // FIXME:
+                // :hover {
+                //     background-color: $lila;
+                // }
+            }
+        }
+
+        &:last-of-type {
+            @include flex(column, 20px);
+
+            label {
+                @include f26;
+                font-weight: bold;
+            }
+        }
+    }
+
+    legend {
+        @include f26;
+        font-weight: bold;
+        margin-bottom: calc(20px - 5px);
+    }
+
+    select {
+        @include f16;
+        position: relative;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background-color: $lila;
+        background: url("../img/arrow.svg") no-repeat 95% center;
+        background-size: 10px 10px;
+        font-family: $font-stack;
+        appearance:none;
+        -moz-appearance:none; 
+        -webkit-appearance:none; 
+
+        &:focus {
+            outline: none;
+            border: 3px solid $purple;
+        }
+    }
+
+    button {
+        @include btn;
+        position: relative;
+    }
+}
