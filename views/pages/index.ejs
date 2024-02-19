@@ -4,19 +4,9 @@
     <%- include('../partials/head'); %>
 </head>
 <body class="body-index">
-    <header class="header-home">
-        <nav>
-            <a href="/"><img id="logo" src="img/logo.svg" alt="Xiao Logo" /></a>
-            
-            <!-- Bron: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch -->
-            <label class="switch" aria-label="Dark mode schakelaar">
-                <input type="checkbox" id="toggle">
-                <span>
-                    <i class="fa-regular fa-sun"></i>
-                </span>
-            </label>
-        </nav>
-    </header>
+
+    <!-- Header -->
+    <%- include('../partials/header-home'); %>
 
     <nav class="nav-page">
         <a href="#sec-1" aria-label="Vorige sectie knop"><i class="fa-solid fa-angle-up"></i></a>
@@ -111,13 +101,9 @@
         </div>
     </section>
 
-    <footer>
-        <h3 class="visually-hidden">Algemene informatie</h3>
-        <div></div>
-        <a href="https://github.com/xiaonanpols21?tab=repositories" aria-label="Xiao's Github pagina"><i class="fa-brands fa-github"></i></a>
-        <p>All rights reserved</p>
-    </footer>
-
+    <!-- Footer -->
+    <%- include('../partials/footer'); %>
+    
     <script src="js/index.js"></script>
 
     <%- include('../partials/script-fontawesome'); %>

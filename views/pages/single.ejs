@@ -5,19 +5,9 @@
 </head>
 <body class="body-single">
     <div class="div-single">
-        <header class="header-home">
-            <nav>
-                <a href="/"><img id="logo" src="img/logo.svg" alt="Xiao Logo" /></a>
-                
-                <!-- Bron: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch -->
-                <label class="switch" aria-label="Dark mode schakelaar">
-                    <input type="checkbox" id="toggle">
-                    <span>
-                        <i class="fa-regular fa-sun"></i>
-                    </span>
-                </label>
-            </nav>
-        </header>
+
+        <!-- Header -->
+        <%- include('../partials/header-home'); %>
 
         <main class="sec main-single">
             <header>
@@ -81,12 +71,9 @@
             <a href="/home#sec-2"><p>Zie alle blogs</p></a>
         </section>
 
-        <footer>
-            <h3 class="visually-hidden">Algemene informatie</h3>
-            <div></div>
-            <a href="https://github.com/xiaonanpols21?tab=repositories" aria-label="Xiao's Github pagina"><i class="fa-brands fa-github"></i></a>
-            <p>All rights reserved</p>
-        </footer>
+        <!-- Footer -->
+        <%- include('../partials/footer'); %>
+        
     </div>
     <script src="js/single.js"></script>
     <%- include('../partials/script-fontawesome'); %>
