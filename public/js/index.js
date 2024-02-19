@@ -16,6 +16,7 @@ const carouselArticles = document.querySelectorAll(".carousel-hero a");
 
 // Dark mode
 const darkSwitch = document.querySelector("#toggle");
+const body = document.querySelector("body");
 const logo = document.querySelector("#logo");
 
 /*
