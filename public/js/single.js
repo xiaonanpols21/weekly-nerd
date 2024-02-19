@@ -1,21 +1,18 @@
-// Logo dark mode
-const logoImg = document.querySelector('#logo');
+// Dark mode
+const darkSwitch = document.querySelector("#toggle");
+const body = document.querySelector(".body-single");
+const logo = document.querySelector("#logo");
 
-// Logo darkmode
-// Zie prompts: https://chemical-bunny-323.notion.site/Weekly-Nerd-Chat-GPT-Documentation-6764544211dc42158c23d85eec350fc4#66351f4c31994abc8ee8e25f3268f01e
-function isDarkMode() {
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-}
+// Dark mode
+function darkMode() {
+    body.classList.toggle("dark-mode");
 
-function toggleDarkModeImage() {
-    if (isDarkMode()) {
-        logoImg.src = './img/logo-wit.svg';
-        logoImg.alt = 'Xiao Logo Wit';
+    // Dark mode img
+    // Zie prompts: https://chemical-bunny-323.notion.site/Weekly-Nerd-Chat-GPT-Documentation-6764544211dc42158c23d85eec350fc4#205f2ab95f4940088aa5ed429c8fc55b
+    if (body.classList.contains("dark-mode")) {
+        logo.src = './img/logo-wit.svg';
     } else {
-        logoImg.src = './img/logo.svg';
-        logoImg.alt = 'Xiao Logo';
+        logo.src = './img/logo.svg';
     }
 }
-toggleDarkModeImage();
-
-window.matchMedia('(prefers-color-scheme: dark)').addListener(toggleDarkModeImage);
+darkSwitch.addEventListener("click", darkMode);
