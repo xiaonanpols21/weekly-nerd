@@ -1,14 +1,23 @@
 const express = require('express');
 const sass = require('sass');
 const fs = require('fs');
+const marked = require('marked');
+const markdownIt = require('markdown-it');
 const path = require('path');
 
 const app = express();
 const port = 3000;
+const md = new markdownIt();
 
 const allLinks = [
     {
         paramId: "1",
+        title: "Phantom",
+        date: "14-02-2024",
+        authur: "Fenna de wilde",
+        img: "public/img/thumbnail.jpeg",
+        categories: ["NextJS", "JavaScript"],
+        description: "Deep dive over aria-labels en een demonstratie over het maken van een carousel",
         link: "public/blogs/1.md"
     }, 
     {
@@ -70,6 +79,7 @@ app.get('/', function(req, res) {
 });
 
 // Zie prompts: https://chemical-bunny-323.notion.site/Weekly-Nerd-Chat-GPT-Documentation-6764544211dc42158c23d85eec350fc4#5528358b478e4056a507c5e7d72a85bb
+// Route handler for rendering individual blog pages
 app.get('/:id', (req, res) => {
     const { id } = req.params;
     const link = allLinks.find(item => item.paramId === id);
@@ -87,11 +97,18 @@ app.get('/:id', (req, res) => {
             res.status(500).send('Error reading blog content');
             return;
         }
+        
+        // Convert Markdown to HTML
+        const htmlContent = md.render(data);
+
+        // Render the single page template with the HTML content
         res.render('pages/single', {
-            data
+            content: htmlContent,
+            link
         });
     });
 });
+
 
 // Port
 app.listen(port, () => {
