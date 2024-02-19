@@ -89,46 +89,16 @@
             </dialog>
             <section class="carousel-blog">
                 <h4 class="visually-hidden">Alle blogs carousel</h4>
-                <a href="/">
-                    <article>
-                        <h3>Stop using JS for that</h3>
-                        <img src="img/thumbnail.jpeg" alt="CMD Media lounge">
-                        <div><i class="fa-solid fa-angle-right"></i></div>
-                        <div class="overlay"></div>
-                    </article>
-                </a>
-                <a href="/">
-                    <article>
-                        <h3>Stop using JS for that</h3>
-                        <img src="img/thumbnail.jpeg" alt="CMD Media lounge">
-                        <div><i class="fa-solid fa-angle-right"></i></div>
-                        <div class="overlay"></div>
-                    </article>
-                </a>
-                <a href="/">
-                    <article>
-                        <h3>Stop using JS for that</h3>
-                        <img src="img/thumbnail.jpeg" alt="CMD Media lounge">
-                        <div><i class="fa-solid fa-angle-right"></i></div>
-                        <div class="overlay"></div>
-                    </article>
-                </a>
-                <a href="/">
-                    <article>
-                        <h3>Stop using JS for that</h3>
-                        <img src="img/thumbnail.jpeg" alt="CMD Media lounge">
-                        <div><i class="fa-solid fa-angle-right"></i></div>
-                        <div class="overlay"></div>
-                    </article>
-                </a>
-                <a href="/">
-                    <article>
-                        <h3>Stop using JS for that</h3>
-                        <img src="img/thumbnail.jpeg" alt="CMD Media lounge">
-                        <div><i class="fa-solid fa-angle-right"></i></div>
-                        <div class="overlay"></div>
-                    </article>
-                </a>
+                <% allLinks.forEach(function(link) { %>
+                    <a href="/blog/<%= link.slug %>">
+                        <article>
+                            <h3><%= link.title %></h3>
+                            <img src="<%= link.img %>" alt="<%= link.title %>">
+                            <div><i class="fa-solid fa-angle-right"></i></div>
+                            <div class="overlay"></div>
+                        </article>
+                    </a>
+                <% }); %>
             </section>
         </div>
     </section>

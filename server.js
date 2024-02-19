@@ -1,7 +1,6 @@
 const express = require('express');
 const sass = require('sass');
 const fs = require('fs');
-const marked = require('marked');
 const markdownIt = require('markdown-it');
 const path = require('path');
 
@@ -12,30 +11,33 @@ const md = new markdownIt();
 const allLinks = [
     {
         paramId: "1",
+        slug: "phantom",
         title: "Phantom",
         date: "14-02-2024",
         authur: "Fenna de wilde",
-        img: "public/img/thumbnail.jpeg",
+        img: "/img/blogs/phantom.png",
         categories: ["NextJS", "JavaScript"],
         description: "Deep dive over aria-labels en een demonstratie over het maken van een carousel",
         link: "public/blogs/1.md"
     }, 
     {
         paramId: "2",
+        slug: "stop-using-js-for-that",
         title: "Stop using JS for that",
         date: "07-02-2024",
         authur: "Kilian Valkhof",
-        img: "public/img/thumbnail.jpeg",
+        img: "/img/blogs/stop-js.jpeg",
         categories: ["HTML", "JavaScript", "CSS"],
-        description: "Voorbeelden om bepaalde dingen te maken zonder JavaScript",
+        description: "Rule: Don't use JavaScript to do something you can easily achieve with CSS.",
         link: "public/blogs/2.md"
     }, 
     {
         paramId: "3",
+        slug: "reflectie-1",
         title: "Reflectie 1",
         date: "16-02-2024",
         authur: "Xiao Nan Pols",
-        img: "public/img/thumbnail.jpeg",
+        img: "/img/blogs/reflectie.jpg",
         categories: ["Reflectie", "JavaScript", "CSS"],
         description: "Waar sta ik, wat wil ik leren en wat hoop ik te behalen",
         link: "public/blogs/3.md"
@@ -87,14 +89,16 @@ app.set('view engine', 'ejs');
 
 // Routes
 app.get('/', function(req, res) {
-    res.render('pages/index');
+    res.render('pages/index', {
+        allLinks
+    });
 });
 
 // Zie prompts: https://chemical-bunny-323.notion.site/Weekly-Nerd-Chat-GPT-Documentation-6764544211dc42158c23d85eec350fc4#5528358b478e4056a507c5e7d72a85bb
 // Route handler for rendering individual blog pages
-app.get('/blog/:id', (req, res) => {
-    const { id } = req.params;
-    const link = allLinks.find(item => item.paramId === id);
+app.get('/blog/:slug', (req, res) => {
+    const { slug } = req.params;
+    const link = allLinks.find(item => item.slug === slug);
 
     if (!link) {
         res.status(404).send('Blog not found');
