@@ -7,7 +7,7 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "build": "sass ./public/styles/index.scss ./public/styles/index.css",
-    "watch": "sass --watch ./path/to/source.scss ./path/to/output.css"
+    "watch": "sass --watch ./public/styles/index.scss ./public/styles/index.css"
   },
   "keywords": [],
   "author": "Xiao Nan Pols",
