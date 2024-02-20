@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "sass": "gulp sass",
-    "sass:watch": "gulp sass:watch"
+    "build": "sass ./public/styles/index.scss ./public/styles/index.css",
+    "watch": "sass --watch ./path/to/source.scss ./path/to/output.css"
   },
   "keywords": [],
   "author": "Xiao Nan Pols",
