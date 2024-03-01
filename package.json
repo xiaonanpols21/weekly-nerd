@@ -5,9 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js",
-    "build": "sass ./public/styles/index.scss ./public/styles/index.css",
-    "watch": "sass --watch ./public/styles/index.scss ./public/styles/index.css"
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "Xiao Nan Pols",
