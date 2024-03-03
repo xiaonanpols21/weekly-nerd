@@ -41,6 +41,17 @@ const allLinks = [
         categories: ["Reflectie", "JavaScript", "CSS"],
         description: "Waar sta ik, wat wil ik leren en wat hoop ik te behalen",
         link: "public/blogs/3.md"
+    },
+    {
+        paramId: "4",
+        slug: "jeffry-arts",
+        title: "Jeffry Arts",
+        date: "21-02-2024",
+        authur: "Jeffry Arts",
+        img: "/img/blogs/jeffry-arts.png",
+        categories: ["3d", "CSS"],
+        description: "Jeffry zijn 3D model",
+        link: "public/blogs/4.md"
     }
 ]
 
