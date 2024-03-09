@@ -52,6 +52,17 @@ const allLinks = [
         categories: ["3d", "CSS"],
         description: "Jeffry zijn 3D model",
         link: "public/blogs/4.md"
+    },
+    {
+        paramId: "5",
+        slug: "9-elements",
+        title: "9 Elements",
+        date: "06-03-2024",
+        authur: "Nils Binder",
+        img: "/img/blogs/9-elements.jpeg",
+        categories: ["columns", "CSS"],
+        description: "Een verhaal over een holbewoner die moet gaan designen met columns",
+        link: "public/blogs/5.md"
     }
 ]
 
