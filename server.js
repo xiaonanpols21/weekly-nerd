@@ -63,6 +63,17 @@ const allLinks = [
         categories: ["columns", "CSS"],
         description: "Een verhaal over een holbewoner die moet gaan designen met columns",
         link: "public/blogs/5.md"
+    },
+    {
+        paramId: "6",
+        slug: "declarative-design",
+        title: "Declarative design",
+        date: "14-03-2024",
+        authur: "Jeremy Keith",
+        img: "/img/blogs/declarative-design.jpeg",
+        categories: ["rem", "CSS", "JavaScript", "HTML"],
+        description: "Imperative VS Declarative",
+        link: "public/blogs/6.md"
     }
 ]
 
