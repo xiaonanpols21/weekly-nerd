@@ -22,7 +22,8 @@
         background: linear-gradient(208deg, rgba(53,23,77,1) 0%, rgba(255,72,120,1) 100%); // Bron: https://cssgradient.io/
 
         h1 {
-            background-image: linear-gradient(to left, $purple, $lila);
+            --color-one: hsl(330, 71%, 64%);
+            --color-two: hsl(245, 6%, 97%);
         }
     }
 

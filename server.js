@@ -74,6 +74,17 @@ const allLinks = [
         categories: ["rem", "CSS", "JavaScript", "HTML"],
         description: "Imperative VS Declarative",
         link: "public/blogs/6.md"
+    },
+    {
+        paramId: "7",
+        slug: "character-design",
+        title: "Character design",
+        date: "18-03-2024",
+        authur: "Julia Miocene",
+        img: "/img/blogs/character-css.jpeg",
+        categories: ["CSS"],
+        description: "How to make Characters with pure CSS animations",
+        link: "public/blogs/7.md"
     }
 ]
 

@@ -46,6 +46,21 @@ p {
     background-color: rgba($dark-purple, 0.5);
 }
 
+.skip-content {
+    @include btn;
+    display: block;
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    z-index: 3;
+    transform: translateY(calc(-100% - 48px));
+    transition: .4s;
+
+    &:focus {
+        transform: translateY(calc(0px));
+    }
+}
+
 // JS
 .disabled {
     pointer-events: none;

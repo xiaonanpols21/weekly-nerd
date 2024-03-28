@@ -8,29 +8,20 @@
         padding-bottom: 10px;
         margin-top: calc(50px + 40px);
 
-        // Text gradient
-        // Bron: https://tomdohnal.com/posts/animated-gradient-headings
+        // Bron: https://codepen.io/web-dot-dev/pen/vYrGPNE?editors=0100
+        --bg-size: 400%;
+        --color-one: hsl(330, 71%, 64%);
+        --color-two: hsl(258, 64%, 47%);
+
+        background: linear-gradient(
+            90deg,
+            var(--color-one),
+            var(--color-two),
+            var(--color-one)
+          )
+          0 0 / var(--bg-size) 100%;
         color: transparent;
-        -webkit-background-clip: text;
-        background-image: linear-gradient(to left, $dark-purple, $purple);
-        
-        
-
-        // Bron: https://keithjgrant.com/posts/2017/07/transitioning-gradients/
-        &::before {
-            position: absolute;
-            content: '';
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-
-            // FIXME:
-            -webkit-background-clip: text;
-            background-image: linear-gradient(to right, $pink, $purple);
-            animation: h1-gradient 3s infinite;
-            transition: .4s;
-        }
+        background-clip: text;
     }
 
     p {
@@ -41,18 +32,15 @@
     }
 }
 
-// Bron: https://tomdohnal.com/posts/animated-gradient-headings
-@keyframes h1-gradient {
-    0% {
-        opacity: 0%;
-    } 
-    
-    50% {
-        opacity: 1;
+@media (prefers-reduced-motion: no-preference) {
+    h1 {
+        animation: move-bg 8s linear infinite;
     }
 
-    100% {
-        opacity: 0;
+    @keyframes move-bg {
+        to {
+            background-position: var(--bg-size) 0;
+        }
     }
 }
 
