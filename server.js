@@ -132,9 +132,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 // Routes
-// Import necessary modules and setup your server
-
-// Handle GET request to render the page
+// Zie prompts: https://chemical-bunny-323.notion.site/Weekly-Nerd-Chat-GPT-Documentation-6764544211dc42158c23d85eec350fc4#b0ebdf0e75f24fe99f9cea7d43f519f6
 app.get('/', function(req, res) {
     // Extract query parameters from the request
     const { html, css, javascript, reflection, sort } = req.query;
@@ -190,7 +188,7 @@ app.get('/', function(req, res) {
 
 
 // Zie prompts: https://chemical-bunny-323.notion.site/Weekly-Nerd-Chat-GPT-Documentation-6764544211dc42158c23d85eec350fc4#5528358b478e4056a507c5e7d72a85bb
-// Route handler for rendering individual blog pages
+// Zie prompts: https://chemical-bunny-323.notion.site/Weekly-Nerd-Chat-GPT-Documentation-6764544211dc42158c23d85eec350fc4#ddb57851bec54566a74a963b47edc729
 app.get('/blog/:slug', (req, res) => {
     const { slug } = req.params;
     const link = allLinks.find(item => item.slug === slug);
@@ -200,8 +198,14 @@ app.get('/blog/:slug', (req, res) => {
         return;
     }
 
+    // Find the index of the current blog
+    const currentIndex = allLinks.findIndex(item => item.slug === slug);
+
+    // Extract the next three blogs after the current one
+    const relatedBlogs = allLinks.slice(currentIndex + 1, currentIndex + 4);
+
+    // Render the single blog page
     // Change string to date
-    // Zie prompts: https://chemical-bunny-323.notion.site/Weekly-Nerd-Chat-GPT-Documentation-6764544211dc42158c23d85eec350fc4#83f8f6ae239542c2a30756f1f6eae882
     const [day, month, year] = link.date.split('-');
     const formattedDate = new Date(`${year}-${month}-${day}`);
     const options = { day: '2-digit', month: 'short', year: 'numeric' };
@@ -222,7 +226,8 @@ app.get('/blog/:slug', (req, res) => {
             link: {
                 ...link,
                 date: formattedDateString
-            }
+            },
+            relatedBlogs: relatedBlogs // Pass the related blogs to the template
         });
     });
 });
