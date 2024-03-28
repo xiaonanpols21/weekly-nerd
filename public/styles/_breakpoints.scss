@@ -134,16 +134,26 @@
     // Sec-2
     .sec-2 {
         h2 {
-            margin-top: 100px;
+            margin-top: 50px;
         }
 
         > div {
             @include container1000;
         }
+
+        div {
+            > button {
+                top: -40px;
+                margin-top: 0px;
+                margin-bottom: -20px;
+            }
+        }
     }
 
     .carousel-blog {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        // height: 400px;
+        // overflow-y: auto;
 
         a {
             &:nth-of-type(2n) {

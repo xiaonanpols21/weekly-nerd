@@ -186,11 +186,6 @@ form {
                 display: none;
             }
 
-            input[type="checkbox"]:checked + label {
-                background-color: $purple;
-                color: #fff;
-            }
-
             label {
                 display: inline-block;
                 padding: 10px 20px;
@@ -204,6 +199,11 @@ form {
                 // :hover {
                 //     background-color: $lila;
                 // }
+
+                &:has(input[type="checkbox"]:checked) {
+                    background-color: $purple;
+                    color: #fff;
+                }
             }
         }
 

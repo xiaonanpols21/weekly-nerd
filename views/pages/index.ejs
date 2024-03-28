@@ -59,23 +59,25 @@
             <h2>Blogs</h2>
             <button onclick="showModal()" aria-label="Filter knop"><i class="fa-solid fa-filter"></i></button>
             <dialog class="dialog">
-                <form method="dialog">
+                <form id="filterForm" method="dialog">
                     <fieldset>
                         <legend>Categorie:</legend>
-                        <input type="checkbox" id="category-1" name="category-1" value="HTML">
-                        <label for="category-1">HTML</label>
-
-                        <input type="checkbox" id="category-2" name="category-2" value="CSS">
-                        <label for="category-2">CSS</label>
-
-                        <input type="checkbox" id="category-3" name="category-3" value="JavaScript">
-                        <label for="category-3">JavaScript</label>
-
-                        <input type="checkbox" id="category-4" name="category-4" value="NextJS">
-                        <label for="category-4">NextJS</label>
-
-                        <input type="checkbox" id="category-5" name="category-5" value="Reflectie">
-                        <label for="category-5">Reflectie</label>
+                        <label>
+                            HTML
+                            <input type="checkbox" name="html" value="HTML">
+                        </label>
+                        <label>
+                            CSS
+                            <input type="checkbox" name="css" value="CSS">
+                        </label>
+                        <label>
+                            JavaScript
+                            <input type="checkbox" name="javascript" value="JavaScript">
+                        </label>
+                        <label>
+                            Relfectie
+                            <input type="checkbox" name="reflection" value="Relfectie">
+                        </label>
                     </fieldset>
                     <fieldset>
                         <label for="sort">Sorteren:</label>

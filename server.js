@@ -16,7 +16,7 @@ const allLinks = [
         date: "14-02-2024",
         authur: "Fenna de wilde",
         img: "/img/blogs/phantom.png",
-        categories: ["NextJS", "JavaScript"],
+        categories: ["JavaScript"],
         description: "Deep dive over aria-labels en een demonstratie over het maken van een carousel",
         link: "public/blogs/1.md"
     }, 
@@ -49,7 +49,7 @@ const allLinks = [
         date: "21-02-2024",
         authur: "Jeffry Arts",
         img: "/img/blogs/jeffry-arts.png",
-        categories: ["3d", "CSS"],
+        categories: ["CSS"],
         description: "Jeffry zijn 3D model",
         link: "public/blogs/4.md"
     },
@@ -60,7 +60,7 @@ const allLinks = [
         date: "06-03-2024",
         authur: "Nils Binder",
         img: "/img/blogs/9-elements.jpeg",
-        categories: ["columns", "CSS"],
+        categories: ["CSS"],
         description: "Een verhaal over een holbewoner die moet gaan designen met columns",
         link: "public/blogs/5.md"
     },
@@ -71,7 +71,7 @@ const allLinks = [
         date: "14-03-2024",
         authur: "Jeremy Keith",
         img: "/img/blogs/declarative-design.jpeg",
-        categories: ["rem", "CSS", "JavaScript", "HTML"],
+        categories: ["CSS", "JavaScript", "HTML"],
         description: "Imperative VS Declarative",
         link: "public/blogs/6.md"
     },
@@ -132,11 +132,62 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 // Routes
+// Import necessary modules and setup your server
+
+// Handle GET request to render the page
 app.get('/', function(req, res) {
+    // Extract query parameters from the request
+    const { html, css, javascript, reflection, sort } = req.query;
+
+    // Filter the allLinks array based on selected categories
+    let filteredLinks = allLinks.filter(link => {
+        if (html && !link.categories.includes('HTML')) return false;
+        if (css && !link.categories.includes('CSS')) return false;
+        if (javascript && !link.categories.includes('JavaScript')) return false;
+        if (reflection && !link.categories.includes('Reflectie')) return false;
+        return true;
+    });
+
+    // Sort the filtered array based on the selected sorting option
+    // Sort the filtered array based on the selected sorting option
+    if (sort === 'abc') {
+        filteredLinks.sort((a, b) => a.title.localeCompare(b.title));
+    } else if (sort === 'old') {
+        filteredLinks.sort((a, b) => {
+            const dateA = new Date(
+                parseInt(a.date.substring(6, 10)), // year
+                parseInt(a.date.substring(3, 5)) - 1, // month (zero-based)
+                parseInt(a.date.substring(0, 2)) // day
+            );
+            const dateB = new Date(
+                parseInt(b.date.substring(6, 10)), // year
+                parseInt(b.date.substring(3, 5)) - 1, // month (zero-based)
+                parseInt(b.date.substring(0, 2)) // day
+            );
+            return dateA - dateB;
+        });
+    } else if (sort === 'new') {
+        filteredLinks.sort((a, b) => {
+            const dateA = new Date(
+                parseInt(a.date.substring(6, 10)), // year
+                parseInt(a.date.substring(3, 5)) - 1, // month (zero-based)
+                parseInt(a.date.substring(0, 2)) // day
+            );
+            const dateB = new Date(
+                parseInt(b.date.substring(6, 10)), // year
+                parseInt(b.date.substring(3, 5)) - 1, // month (zero-based)
+                parseInt(b.date.substring(0, 2)) // day
+            );
+            return dateB - dateA;
+        });
+    }
+
+    // Render the page with the filtered and sorted array
     res.render('pages/index', {
-        allLinks
+        allLinks: filteredLinks
     });
 });
+
 
 // Zie prompts: https://chemical-bunny-323.notion.site/Weekly-Nerd-Chat-GPT-Documentation-6764544211dc42158c23d85eec350fc4#5528358b478e4056a507c5e7d72a85bb
 // Route handler for rendering individual blog pages
