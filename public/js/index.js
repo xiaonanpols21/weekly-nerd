@@ -91,13 +91,12 @@ function darkMode() {
 }
 darkSwitch.addEventListener("click", darkMode);
 
+
 // Dialog
 // Bron: https://www.lambdatest.com/blog/html-dialog-element/
 function showModal() {
     document.querySelector('.dialog').showModal();
 }
-
-
 
 const filterForm = document.getElementById('filterForm');
     filterForm.addEventListener('submit', async function(event) {
