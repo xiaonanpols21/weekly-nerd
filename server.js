@@ -96,6 +96,17 @@ const allLinks = [
         categories: ["Hackaton"],
         description: "Een week lang werken aan: CSS Day Hackaton",
         link: "public/blogs/8.md"
+    },
+    {
+        paramId: "9",
+        slug: "digitaal-toegankelijkheid",
+        title: "Digitaal Toegankelijkheid",
+        date: "03-04-2024",
+        authur: "Pim en Marieke",
+        img: "/img/blogs/digitaal-toegankelijkheid.png",
+        categories: ["HTML"],
+        description: "Hoe maak je het web toegankelijk voor iedereen?",
+        link: "public/blogs/9.md"
     }
 ]
 
