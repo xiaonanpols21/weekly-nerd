@@ -85,6 +85,17 @@ const allLinks = [
         categories: ["CSS"],
         description: "How to make Characters with pure CSS animations",
         link: "public/blogs/7.md"
+    },
+    {
+        paramId: "8",
+        slug: "hackaton",
+        title: "Hackaton",
+        date: "28-03-2024",
+        authur: "Xiao Nan Pols",
+        img: "/img/blogs/hackaton-design.jpg",
+        categories: ["Hackaton"],
+        description: "Een week lang werken aan: CSS Day Hackaton",
+        link: "public/blogs/8.md"
     }
 ]
 
