@@ -107,6 +107,17 @@ const allLinks = [
         categories: ["HTML"],
         description: "Hoe maak je het web toegankelijk voor iedereen?",
         link: "public/blogs/9.md"
+    },
+    {
+        paramId: "10",
+        slug: "creative-coding",
+        title: "Creative Coding",
+        date: "10-04-2024",
+        authur: "Rosa Schuurman",
+        img: "/img/blogs/creative-coding.jpg",
+        categories: ["fysiek"],
+        description: "Wat is cricuit bending?",
+        link: "public/blogs/10.md"
     }
 ]
 
