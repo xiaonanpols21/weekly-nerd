@@ -148,12 +148,29 @@
                 margin-bottom: -20px;
             }
         }
+
+        .i {
+            position: relative;
+            bottom: 20px;
+            display: block;
+            text-align: right;
+            font-size: 30px;
+            color: $pink;
+            animation-name: jump;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
     }
 
     .carousel-blog {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         height: 500px;
         overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        
 
         a {
             &:nth-of-type(2n) {
@@ -278,12 +295,16 @@
     }
 }
 
-// X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+@keyframes jump {
+    0% {
+        transform: translateY(0px);
+    }
 
-}
+    50% {
+        transform: translateY(-50px);
+    }
 
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) {
-    
+    100% {
+        transform: translateY(0px);
+    }
 }

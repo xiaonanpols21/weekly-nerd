@@ -67,7 +67,7 @@
         @include f18;
     }
 
-    ul {
+    ul, ol {
         @include f16;
         margin-left: 20px;
     }
