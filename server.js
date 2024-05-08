@@ -118,7 +118,18 @@ const allLinks = [
         categories: ["fysiek"],
         description: "Wat is cricuit bending?",
         link: "public/blogs/10.md"
-    }
+    },
+    {
+        paramId: "11",
+        slug: "reflectie-2",
+        title: "Reflectie 2",
+        date: "8-05-2024",
+        authur: "Xiao Nan Pols",
+        img: "/img/blogs/reflectie.jpg",
+        categories: ["Reflectie", "JavaScript", "CSS"],
+        description: "Waar sta ik nu, wat wil ik leren tijdens de Meesterproef?",
+        link: "public/blogs/11.md"
+    },
 ]
 
 // Function to compile Sass
