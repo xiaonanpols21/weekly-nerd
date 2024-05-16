@@ -130,6 +130,17 @@ const allLinks = [
         description: "Waar sta ik nu, wat wil ik leren tijdens de Meesterproef?",
         link: "public/blogs/11.md"
     },
+    {
+        paramId: "12",
+        slug: "aan-het-werk",
+        title: "Aan het werk, wat nu?",
+        date: "15-05-2024",
+        authur: "Robert Spier",
+        img: "/img/blogs/robert.jpeg",
+        categories: ["fysiek"],
+        description: "Waar moet je op letten als je gaat solliciteren en hoeveel geld kan je wel niet verdienen met een CMD diploma?",
+        link: "public/blogs/12.md"
+    },
 ]
 
 // Function to compile Sass
