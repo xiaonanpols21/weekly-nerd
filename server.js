@@ -5,7 +5,7 @@ const markdownIt = require('markdown-it');
 const path = require('path');
 
 const app = express();
-const port = 3000;
+const port = 4000;
 const md = new markdownIt();
 
 const allLinks = [
@@ -140,6 +140,17 @@ const allLinks = [
         categories: ["fysiek"],
         description: "Waar moet je op letten als je gaat solliciteren en hoeveel geld kan je wel niet verdienen met een CMD diploma?",
         link: "public/blogs/12.md"
+    },
+    {
+        paramId: "13",
+        slug: "q-42",
+        title: "Q 42",
+        date: "22-05-2024",
+        authur: "Q 42 medewerkers",
+        img: "/img/blogs/q-42.png",
+        categories: ["HTML", "CSS"],
+        description: "Met welke projecten hebben wij toegankelijkheid toegevoegd?",
+        link: "public/blogs/13.md"
     },
 ]
 
