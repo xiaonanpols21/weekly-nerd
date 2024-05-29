@@ -152,6 +152,17 @@ const allLinks = [
         description: "Met welke projecten hebben wij toegankelijkheid toegevoegd?",
         link: "public/blogs/13.md"
     },
+    {
+        paramId: "14",
+        slug: "public-stack",
+        title: "Mobile ecosystem and the public stack",
+        date: "29-05-2024",
+        authur: "Danny en Marit",
+        img: "/img/blogs/eco.png",
+        categories: ["ecosystem"],
+        description: "Hoe ziet jouw perfecte mobiel er uit?",
+        link: "public/blogs/14.md"
+    },
 ]
 
 // Function to compile Sass
