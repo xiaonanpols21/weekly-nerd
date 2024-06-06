@@ -163,6 +163,17 @@ const allLinks = [
         description: "Hoe ziet jouw perfecte mobiel er uit?",
         link: "public/blogs/14.md"
     },
+    {
+        paramId: "15",
+        slug: "pre-css-day",
+        title: "Pre CSS day",
+        date: "05-06-2024",
+        authur: "Bramus en Miriam",
+        img: "/img/blogs/pre-css.png",
+        categories: ["CSS"],
+        description: "View Trainsitions en Containers",
+        link: "public/blogs/15.md"
+    },
 ]
 
 // Function to compile Sass
