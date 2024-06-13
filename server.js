@@ -174,6 +174,17 @@ const allLinks = [
         description: "View Trainsitions en Containers",
         link: "public/blogs/15.md"
     },
+    {
+        paramId: "16",
+        slug: "reflectie-3",
+        title: "WN Reflectie 3",
+        date: "13-06-2024",
+        authur: "Xiao Nan Pols",
+        img: "/img/blogs/reflectie.jpg",
+        categories: ["Reflectie"],
+        description: "Waar sta ik en hoe nu verder?",
+        link: "public/blogs/16.md"
+    }
 ]
 
 // Function to compile Sass
