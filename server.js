@@ -34,7 +34,7 @@ const allLinks = [
     {
         paramId: "3",
         slug: "reflectie-1",
-        title: "Reflectie 1",
+        title: "WN Reflectie 1",
         date: "16-02-2024",
         authur: "Xiao Nan Pols",
         img: "/img/blogs/reflectie.jpg",
@@ -122,7 +122,7 @@ const allLinks = [
     {
         paramId: "11",
         slug: "reflectie-2",
-        title: "Reflectie 2",
+        title: "WN Reflectie 2",
         date: "8-05-2024",
         authur: "Xiao Nan Pols",
         img: "/img/blogs/reflectie.jpg",
