@@ -97,20 +97,3 @@ darkSwitch.addEventListener("click", darkMode);
 function showModal() {
     document.querySelector('.dialog').showModal();
 }
-
-const filterForm = document.getElementById('filterForm');
-    filterForm.addEventListener('submit', async function(event) {
-        event.preventDefault();
-
-        // Gather selected parameters from the form
-        const formData = new FormData(filterForm);
-        const selectedCategories = Array.from(formData.keys());
-        const sortOption = formData.get('sort');
-
-        // Make a request to the server with selected parameters
-        const response = await fetch(`/?${new URLSearchParams(formData).toString()}`);
-        const html = await response.text();
-
-        // Update the page with the filtered and sorted data
-        document.querySelector('body').innerHTML = html;
-    });
